@@ -1,0 +1,17 @@
+{
+		"version": "1.0.0.0",
+		"author": {"name":"Simone Esposito","email":"simone.a.esposito@accenture.com"},
+		"resources": [
+			{
+				"resourceId": "rId0",
+				"sourceType": 5,
+				"file": "resources/interactiveGraphDA509FABDFB34B47B9E7C557D3D08BF0.pbiviz.json"
+			}
+		],
+		"visual": {"name":"interactiveGraph","displayName":"InteractiveGraph","guid":"interactiveGraphDA509FABDFB34B47B9E7C557D3D08BF0","visualClassName":"Visual","version":"1.0.0.0","description":"Please work!","supportUrl":"nope","gitHubUrl":""},
+		"metadata": {
+			"pbivizjson": {
+				"resourceId": "rId0"
+			}
+		}
+	}
