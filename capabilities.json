@@ -1,0 +1,79 @@
+{
+    "dataRoles": [
+        {
+            "name": "NodeName",
+            "kind": "Grouping",
+            "displayName": "Nome Nodo"
+        },
+        {
+            "name": "NodeColor",
+            "kind": "Grouping",
+            "displayName": "Colore Nodo"
+        },
+        {
+            "name": "NodeSize",
+            "kind": "Measure",
+            "displayName": "Dimensione Nodo"
+        },
+        {
+            "name": "SourceNode",
+            "kind": "Grouping",
+            "displayName": "Nodo Sorgente"
+        },
+        {
+            "name": "TargetNode",
+            "kind": "Grouping",
+            "displayName": "Nodo Destinazione"
+        },
+        {
+            "name": "EdgeLabel",
+            "kind": "Grouping",
+            "displayName": "Testo Collegamento"
+        }
+    ],
+    "dataViewMappings": [
+        {
+            "categorical": {
+                "categories": [
+                    {
+                        "displayName": "Nodi",
+                        "name": "nodes",
+                        "items": [{ "bind": { "to": "NodeName" } }]
+                    }
+                ],
+                "values": {
+                    "select": [
+                        { "bind": { "to": "NodeColor" } },
+                        { "bind": { "to": "NodeSize" } },
+                        { "bind": { "to": "SourceNode" } },
+                        { "bind": { "to": "TargetNode" } },
+                        { "bind": { "to": "EdgeLabel" } }
+                    ]
+                }
+            }
+        }
+    ],
+    "objects": {
+        "settings": {
+            "displayName": "Impostazioni",
+            "properties": {
+                "smallSize": {
+                    "displayName": "Piccolo",
+                    "type": { "numeric": true }
+                },
+                "mediumSize": {
+                    "displayName": "Medio",
+                    "type": { "numeric": true }
+                },
+                "largeSize": {
+                    "displayName": "Grande",
+                    "type": { "numeric": true }
+                },
+                "extraLargeSize": {
+                    "displayName": "Molto Grande",
+                    "type": { "numeric": true }
+                }
+            }
+        }
+    }
+}
