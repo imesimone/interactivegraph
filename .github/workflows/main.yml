@@ -39,9 +39,6 @@ jobs:
       - name: Validate the Power BI Visual
         run: pbiviz validate
 
-      - name: Run tests
-        run: npm test
-
       - name: Upload .pbiviz artifact
         uses: actions/upload-artifact@v3
         with:

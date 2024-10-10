@@ -11,12 +11,14 @@
     "pbiviz": "pbiviz",
     "start": "pbiviz start",
     "package": "pbiviz package",
-    "lint": "npx eslint ."
+    "lint": "npx eslint .",
+    "build": "pbiviz package"
   },
   "dependencies": {
     "@types/d3": "7.4.3",
+    "core-js": "^3.38.1",
     "d3": "7.9.0",
-    "powerbi-visuals-api": "^5.11.0",
+    "powerbi-visuals-api": "~5.3.0",
     "powerbi-visuals-utils-dataviewutils": "^6.1.0",
     "powerbi-visuals-utils-formattingmodel": "6.0.4",
     "vis-network": "^9.1.9"

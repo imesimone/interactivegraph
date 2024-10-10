@@ -34,20 +34,28 @@
     "dataViewMappings": [
         {
             "categorical": {
-                "categories": [
-                    {
-                        "displayName": "Nodi",
-                        "name": "nodes",
-                        "items": [{ "bind": { "to": "NodeName" } }]
+                "categories": {
+                    "for": {
+                        "in": "NodeName"
                     }
-                ],
+                },
                 "values": {
                     "select": [
-                        { "bind": { "to": "NodeColor" } },
-                        { "bind": { "to": "NodeSize" } },
-                        { "bind": { "to": "SourceNode" } },
-                        { "bind": { "to": "TargetNode" } },
-                        { "bind": { "to": "EdgeLabel" } }
+                        {
+                            "bind": { "to": "NodeColor" }
+                        },
+                        {
+                            "bind": { "to": "NodeSize" }
+                        },
+                        {
+                            "bind": { "to": "SourceNode" }
+                        },
+                        {
+                            "bind": { "to": "TargetNode" }
+                        },
+                        {
+                            "bind": { "to": "EdgeLabel" }
+                        }
                     ]
                 }
             }
@@ -75,5 +83,11 @@
                 }
             }
         }
-    }
+    },
+    "privileges": [
+        {
+            "name": "WebAccess",
+            "essential": true
+        }
+    ]
 }
