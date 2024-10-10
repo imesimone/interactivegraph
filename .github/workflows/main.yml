@@ -1,0 +1,49 @@
+name: Build and Package Power BI Visual
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Power BI Visuals Tools
+        run: npm install -g powerbi-visuals-tools@3.2.3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the Power BI Visual
+        run: npm run build
+
+      - name: Validate the Power BI Visual
+        run: pbiviz validate
+
+      - name: Run tests
+        run: npm test
+
+      - name: Upload .pbiviz artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: powerbi-visual-package
+          path: dist/*.pbiviz
